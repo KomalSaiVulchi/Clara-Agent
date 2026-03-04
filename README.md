@@ -2,6 +2,10 @@
 
 A zero-cost, deterministic automation pipeline that converts customer call transcripts into structured AI voice agent configurations.
 
+## 🎥 Video Demonstration
+Watch the end-to-end pipeline execution and code walkthrough here:  
+👉 **[Watch the Loom Demo](https://www.loom.com/share/df75fe9e26fb404ba14206b2adbc5cac)**
+
 ## Project Overview
 
 This system is designed to automate the process of building and updating Retell AI Agent specifications. It reads plain text transcripts from demo and onboarding calls, extracts operational business data into a standardized Account Memo format, and generates version-controlled Draft Agent Specifications.
