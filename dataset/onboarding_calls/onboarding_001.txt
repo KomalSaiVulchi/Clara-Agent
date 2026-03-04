@@ -1,0 +1,10 @@
+Agent: Welcome to the Clara onboarding call. This is Clara speaking.
+Caller: Hey, Bob here from Apex Plumbing. We want to update some settings from our demo.
+Agent: Sure thing, Bob. What would you like to update?
+Caller: Let's change our business hours to Monday through Saturday, 7am to 6pm Pacific Time.
+Agent: Got it. 7am to 6pm PST, Monday-Saturday. Any changes to emergency definition?
+Caller: Add gas leaks to the emergency definition.
+Agent: Okay, gas leaks added. Any new integration rules?
+Caller: Tell the system not to create drain cleaning jobs in HouseCall Pro either.
+Agent: Noted. Anything else?
+Caller: No, that's it.

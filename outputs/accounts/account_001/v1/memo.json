@@ -1,0 +1,41 @@
+{
+    "account_id": "account_001",
+    "company_name": "Apex Plumbing",
+    "business_hours": {
+        "days": "Monday to Friday",
+        "start": "8am",
+        "end": "5pm",
+        "timezone": "PST"
+    },
+    "office_address": null,
+    "services_supported": [
+        "pipe leaks",
+        "water heater repair",
+        "drain cleaning"
+    ],
+    "emergency_definition": [
+        "major pipe burst",
+        "completely flooded basement"
+    ],
+    "emergency_routing_rules": {
+        "step_1": "dispatch team at 555-0199"
+    },
+    "non_emergency_routing_rules": {
+        "step_1": "leave a message"
+    },
+    "call_transfer_rules": {
+        "timeout_seconds": "30",
+        "retry_count": "2",
+        "fallback_action": "voicemail"
+    },
+    "integration_constraints": [
+        "never schedule water heater repairs through ServiceTitan automatically"
+    ],
+    "after_hours_flow_summary": null,
+    "office_hours_flow_summary": null,
+    "questions_or_unknowns": [
+        "office address missing",
+        "after hours flow missing"
+    ],
+    "notes": ""
+}

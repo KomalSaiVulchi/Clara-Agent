@@ -1,0 +1,11 @@
+{
+    "account_id": "account_001",
+    "version_update": "v1_to_v2",
+    "changes": [
+        "integration_constraints added: do not create drain cleaning jobs in HouseCall Pro",
+        "business_hours.days updated from 'Monday to Friday' to 'Monday-Saturday'",
+        "business_hours.start updated from '8am' to '7am'",
+        "business_hours.end updated from '5pm' to '6pm'",
+        "emergency_definition added: flooded basement, gas leaks"
+    ]
+}

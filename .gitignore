@@ -1,0 +1,9 @@
+.DS_Store
+__pycache__/
+*.pyc
+
+# Local logs
+logs/
+
+# Optional: if you don't want to push generated outputs to git, uncomment below
+# outputs/

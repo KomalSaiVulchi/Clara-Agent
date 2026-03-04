@@ -1,0 +1,18 @@
+Agent: Hello, this is Clara from the Clara Answers team. How can I help you?
+Caller: Hi, I'm Bob from Apex Plumbing. We're looking to set up an AI answer bot for our calls.
+Agent: Great! So the company is Apex Plumbing. Can I get your business hours?
+Caller: Yes, we are open Monday to Friday, 8am to 5pm Pacific Time.
+Agent: Awesome. And what services do you support?
+Caller: We handle pipe leaks, water heater repair, and drain cleaning.
+Agent: Got it. What do you consider an emergency?
+Caller: A major pipe burst or a completely flooded basement.
+Agent: How should emergencies be routed during business hours?
+Caller: Route emergencies strictly to the dispatch team at 555-0199.
+Agent: And what about non-emergencies during the day?
+Caller: Non-emergencies should just leave a message or wait for an available tech.
+Agent: Okay. What if a call transfer fails?
+Caller: Oh, wait for 30 seconds, retry 2 times, then ask them to leave a voicemail.
+Agent: Do you have any integration constraints?
+Caller: Yes, never schedule water heater repairs through ServiceTitan automatically.
+Agent: Understood. Let me know if you have any questions!
+Caller: That's all for now.

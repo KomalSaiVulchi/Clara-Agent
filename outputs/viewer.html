@@ -1,0 +1,157 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Clara Answer - Account Dashboard</title>
+        <style>
+            body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f4f7f6; color: #333; margin: 0; padding: 20px; }
+            .container { max-width: 1000px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+            h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+            table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+            th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+            th { background-color: #f8f9fa; color: #2c3e50; font-weight: 600; }
+            tr:hover { background-color: #f1f8ff; }
+            .badge { display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; }
+            .badge-v1 { background-color: #e3f2fd; color: #1976d2; }
+            .badge-v2 { background-color: #e8f5e9; color: #388e3c; }
+            .badge-change { background-color: #fff3e0; color: #f57c00; margin-bottom: 4px; display: block; }
+            .details-row { display: none; background-color: #fafbfc; }
+            .details-content { display: flex; gap: 20px; padding: 15px; border: 1px solid #ddd; border-top: none; }
+            .json-block { flex: 1; background: #282c34; color: #abb2bf; padding: 15px; border-radius: 5px; overflow-x: auto; font-family: monospace; font-size: 13px; }
+            .btn { background: #3498db; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; }
+            .btn:hover { background: #2980b9; }
+        </style>
+        <script>
+            function toggleDetails(id) {
+                const el = document.getElementById('details-' + id);
+                if (el.style.display === 'table-row') {
+                    el.style.display = 'none';
+                } else {
+                    el.style.display = 'table-row';
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Clara Agent Automation Dashboard</h1>
+            <p>Overview of processed accounts and agent versions.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Account ID</th>
+                        <th>v1 Created</th>
+                        <th>v2 Updated</th>
+                        <th>Changes Logged</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <tr>
+                        <td><strong>account_001</strong></td>
+                        <td><span class="badge badge-v1">Yes</span></td>
+                        <td><span class="badge badge-v2">Yes</span></td>
+                        <td><span class="badge badge-change">integration_constraints added: do not create drain cleaning jobs in HouseCall Pro</span><span class="badge badge-change">business_hours.days updated from 'Monday to Friday' to 'Monday-Saturday'</span><span class="badge badge-change">business_hours.start updated from '8am' to '7am'</span><span class="badge badge-change">business_hours.end updated from '5pm' to '6pm'</span><span class="badge badge-change">emergency_definition added: flooded basement, gas leaks</span></td>
+                        <td><button class="btn" onclick="toggleDetails('account_001')">View Diff</button></td>
+                    </tr>
+                    <tr id="details-account_001" class="details-row">
+                        <td colspan="5">
+                            <div class="details-content">
+                                <div class="json-block"><strong>v1 Memo:</strong><br><pre>{
+    "account_id": "account_001",
+    "company_name": "Apex Plumbing",
+    "business_hours": {
+        "days": "Monday to Friday",
+        "start": "8am",
+        "end": "5pm",
+        "timezone": "PST"
+    },
+    "office_address": null,
+    "services_supported": [
+        "pipe leaks",
+        "water heater repair",
+        "drain cleaning"
+    ],
+    "emergency_definition": [
+        "major pipe burst",
+        "completely flooded basement"
+    ],
+    "emergency_routing_rules": {
+        "step_1": "dispatch team at 555-0199"
+    },
+    "non_emergency_routing_rules": {
+        "step_1": "leave a message"
+    },
+    "call_transfer_rules": {
+        "timeout_seconds": "30",
+        "retry_count": "2",
+        "fallback_action": "voicemail"
+    },
+    "integration_constraints": [
+        "never schedule water heater repairs through ServiceTitan automatically"
+    ],
+    "after_hours_flow_summary": null,
+    "office_hours_flow_summary": null,
+    "questions_or_unknowns": [
+        "office address missing",
+        "after hours flow missing"
+    ],
+    "notes": ""
+}</pre></div>
+                                <div class="json-block"><strong>v2 Memo:</strong><br><pre>{
+    "account_id": "account_001",
+    "company_name": "Apex Plumbing",
+    "business_hours": {
+        "days": "Monday-Saturday",
+        "start": "7am",
+        "end": "6pm",
+        "timezone": "PST"
+    },
+    "office_address": null,
+    "services_supported": [
+        "pipe leaks",
+        "water heater repair",
+        "drain cleaning"
+    ],
+    "emergency_definition": [
+        "major pipe burst",
+        "completely flooded basement",
+        "flooded basement",
+        "gas leaks"
+    ],
+    "emergency_routing_rules": {
+        "step_1": "dispatch team at 555-0199"
+    },
+    "non_emergency_routing_rules": {
+        "step_1": "leave a message"
+    },
+    "call_transfer_rules": {
+        "timeout_seconds": "30",
+        "retry_count": "2",
+        "fallback_action": "voicemail"
+    },
+    "integration_constraints": [
+        "never schedule water heater repairs through ServiceTitan automatically",
+        "do not create drain cleaning jobs in HouseCall Pro"
+    ],
+    "after_hours_flow_summary": null,
+    "office_hours_flow_summary": null,
+    "questions_or_unknowns": [
+        "office address missing",
+        "after hours flow missing"
+    ],
+    "notes": ""
+}</pre></div>
+                            </div>
+                        </td>
+                    </tr>
+        
+                </tbody>
+            </table>
+        </div>
+    </body>
+    </html>
+    

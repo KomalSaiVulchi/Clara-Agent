@@ -1,0 +1,75 @@
+{
+    "name": "Clara Agent Automation Setup Pipeline",
+    "nodes": [
+        {
+            "parameters": {},
+            "id": "e4c5b1d0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
+            "name": "Manual Trigger",
+            "type": "n8n-nodes-base.manualTrigger",
+            "typeVersion": 1,
+            "position": [
+                240,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "command": "bash workflows/demo_pipeline.sh"
+            },
+            "id": "a1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d",
+            "name": "Process Demo Transcripts (v1)",
+            "type": "n8n-nodes-base.executeCommand",
+            "typeVersion": 1,
+            "position": [
+                460,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "command": "bash workflows/onboarding_pipeline.sh"
+            },
+            "id": "f5e4d3c2-b1a0-9f8e-7d6c-5b4a3f2e1d0c",
+            "name": "Process Onboarding Updates (v2)",
+            "type": "n8n-nodes-base.executeCommand",
+            "typeVersion": 1,
+            "position": [
+                680,
+                300
+            ]
+        }
+    ],
+    "pinData": {},
+    "connections": {
+        "Manual Trigger": {
+            "main": [
+                [
+                    {
+                        "node": "Process Demo Transcripts (v1)",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Process Demo Transcripts (v1)": {
+            "main": [
+                [
+                    {
+                        "node": "Process Onboarding Updates (v2)",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    },
+    "active": false,
+    "settings": {},
+    "versionId": "fdd8c7ef-197e-409c-a1b4-2e90f6b3b05f",
+    "meta": {
+        "templateCredsSetupCompleted": true
+    },
+    "id": "A1B2C3D4",
+    "tags": []
+}
